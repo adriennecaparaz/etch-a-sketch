@@ -1,3 +1,5 @@
+// initialize default 16x16 grid
+
 const container = document.querySelector('.grid-container');
 
 for (let i = 0; i < 16; i++) {
@@ -9,6 +11,8 @@ for (let i = 0; i < 16; i++) {
         container.appendChild(grid);
     }
 }
+
+// adding functionality of  set size button
 
 function setSize() {
     let size = prompt("Set amount of squares per side of grid:");
@@ -39,6 +43,8 @@ function setSize() {
 const sizeButton = document.querySelector('button#size');
 sizeButton.addEventListener('click', setSize);
 
+// adding functionality of hover to draw
+
 function addColor(e) {
     e.target.style.backgroundColor = '#000';
 }
@@ -47,6 +53,8 @@ const pixels = document.querySelectorAll('.grid');
 pixels.forEach(pixel => {
     pixel.addEventListener('mouseover', addColor);
 });
+
+// adding functionality to clear button
 
 function clear() {
     const pixels = document.querySelectorAll('.grid');
