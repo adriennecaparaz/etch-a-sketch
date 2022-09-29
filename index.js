@@ -7,3 +7,12 @@ for (let i = 0; i < 16; i++) {
         container.appendChild(grid);
     }
 }
+
+function addColor(e) {
+    e.target.style.backgroundColor = 'pink';
+}
+
+const pixels = document.querySelectorAll('.grid');
+pixels.forEach(pixel => {
+    pixel.addEventListener('mouseover', addColor);
+});
