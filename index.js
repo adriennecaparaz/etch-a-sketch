@@ -11,8 +11,11 @@ for (let i = 0; i < 16; i++) {
 }
 
 function setSize() {
-    const size = prompt("Set amount of squares per side of grid:");
-    const side = Math.floor(480 / size);
+    let size = prompt("Set amount of squares per side of grid:");
+    while (size > 100) {
+        size = prompt("ERROR: Amount must be 100 squares or less!");
+    }
+    const side = 480 / size;
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
@@ -37,7 +40,7 @@ const sizeButton = document.querySelector('button#size');
 sizeButton.addEventListener('click', setSize);
 
 function addColor(e) {
-    e.target.style.backgroundColor = 'pink';
+    e.target.style.backgroundColor = '#000';
 }
 
 const pixels = document.querySelectorAll('.grid');
@@ -46,8 +49,9 @@ pixels.forEach(pixel => {
 });
 
 function clear() {
+    const pixels = document.querySelectorAll('.grid');
     pixels.forEach(pixel => {
-        pixel.style.backgroundColor = 'honeydew';
+        pixel.style.backgroundColor = '#fff';
     });
 }
 
