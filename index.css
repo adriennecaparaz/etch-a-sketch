@@ -1,23 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
 body {
+    font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
     margin: auto;
+    background-image: url('./table.jpg');
+    background-size: cover;
 }
 
 main {
     display: flex;
     height: 100vh;
     max-height: -webkit-fill-available;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.etch-container {
+    background-color: #ae2222;
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 15px rgb(0 0 0 / 0.4);
+}
+
 .grid-container {
+    margin-top: 40px;
     display: grid;
+    background-color: #fff;
     grid-template-rows: repeat(16, 30px);
     grid-template-columns: repeat(16, 30px);
-    border: 25px solid darkred;
-    border-radius: 10px;
     line-height: 0;
     width: 480px;
 }
@@ -28,5 +44,28 @@ main {
 }
 
 .menu {
-    margin-top: 10px;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color:#ae2222;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: 0.2s;
 }
